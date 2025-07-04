@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+<h2>Register</h2>
+<form method="POST" action="{{ url_for('register') }}">
+  <input type="text" name="username" placeholder="Choose Username" required />
+  <input type="password" name="password" placeholder="Choose Password" required />
+  
+  <label>Speed Driver?</label>
+  <select name="speed_driver" required>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+
+  <label>Engine Type:</label>
+  <select name="engine_type" required>
+    <option value="petrol">Petrol</option>
+    <option value="electric">Electric</option>
+  </select>
+
+  <label>Vehicle Type:</label>
+  <select name="vehicle_type" required>
+    <option value="bike">Bike</option>
+    <option value="car">Car</option>
+    <option value="truck">Truck</option>
+  </select>  
+
+  <div class="form-group">
+    <label for="is_admin">Admin (Development Only!)</label>
+    <select name="is_admin" id = "is_admin" required>
+      <option value ='no'>No</option>
+      <option value ='yes' >Yes</option>
+    </select>
+  </div>
+
+  <button type="submit" class="register-btn">Register</button>
+</form>
+<p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+{% endblock %}

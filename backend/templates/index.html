@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Map Guidance{% endblock %}
+{% block body %}
+<a href="{{ url_for('logout') }}" class="logout">Logout</a>
+<h2 style="text-align:center;">Welcome, {{ current_user.username }}!</h2>
+
+{% if current_user.is_admin %}
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <a href="{{ url_for('download_users_csv_for_all') }}" style="background-color: #007bff; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;">Download User Data (CSV)</a>
+    </div>
+{% endif %}
+
+<div class="controls">
+  <input id="from" type="text" placeholder="From" />
+  <input id="to" type="text" placeholder="To" />
+  <button id="searchBtn">Get Route</button>
+</div>
+
+<div id="map"></div>
+
+<div class="precautions-section">
+    <h3>Important Travel Precautions</h3>
+    <p>Based on your profile, here are some recommended precautions:</p>
+    <ul>
+        <li>
+            <h4>Research the Destination:</h4>
+            <p>Before you travel, thoroughly research your destination. Understand local customs, laws, cultural norms, and any specific safety advisories. Check government travel warnings and local news for current conditions.</p>
+            {% if current_user.prefers_quick %}
+                <p class="highlight-precaution"><strong>Quick Route Tip:</strong> If you prefer quick routes, double-check specific traffic regulations or bypass rules for faster roads.</p>
+            {% endif %}
+            {% if current_user.vehicle_type == 'truck' %}
+                <p class="highlight-precaution"><strong>Truck Driver Tip:</strong> Pay extra attention to road restrictions, bridge clearances, and weight limits relevant to trucks.</p>
+            {% endif %}
+        </li>
+        <li>
+            <h4>Health Precautions:</h4>
+            <p>Consult a healthcare professional or travel clinic well in advance of your trip. Discuss necessary vaccinations, medications (e.g., for malaria, traveler's diarrhea), and any specific health risks at your destination. Carry a basic first-aid kit with essentials.</p>
+            {% if current_user.is_speed_driver %}
+                <p class="highlight-precaution"><strong>Speed Driver Tip:</strong> Higher speeds can increase the risk of accidents. Ensure you are well-rested and alert to minimize risks.</p>
+            {% endif %}
+        </li>
+        <li>
+            <h4>Travel Insurance:</h4>
+            <p>Invest in comprehensive travel insurance. This should cover medical emergencies, trip cancellations, lost luggage, and other unforeseen events. Read the policy carefully to understand what is and isn't covered.</p>
+            {% if current_user.is_speed_driver or current_user.vehicle_type == 'bike' %}
+                <p class="highlight-precaution"><strong>Important:</strong> Consider insurance with comprehensive accident coverage, especially if you're a speed driver or ride a bike.</p>
+            {% endif %}
+        </li>
+        <li>
+            <h4>Document Safety:</h4>
+            <p>Make digital and physical copies of all important documents (passport, visa, flight tickets, hotel reservations, insurance policies). Store digital copies securely online (e.g., in cloud storage) and keep physical copies separate from the originals. Only carry what you need for the day.</p>
+        </li>
+        <li>
+            <h4>Financial Preparedness:</h4>
+            <p>Notify your bank and credit card companies of your travel plans to avoid any fraud alerts or card suspensions. Carry a mix of payment methods (some local currency, credit cards, debit cards) and keep them in different locations. Be mindful of ATM usage in unfamiliar areas.</p>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}

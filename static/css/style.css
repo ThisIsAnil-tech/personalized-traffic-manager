@@ -1,0 +1,291 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  margin: 0;
+}
+
+form {
+  max-width: 300px;
+  margin: auto;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button.login-btn {
+  background-color: #4CAF50;
+}
+
+button.register-btn {
+  background-color: #2196F3;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#map {
+  height: 500px;
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
+.controls {
+  padding: 1rem;
+  background: #f0f0f0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.controls input[type=text] {
+  padding: 0.5rem;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+.controls button {
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #45a049;
+}
+
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #f00;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.flash-messages {
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.flash {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.flash.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.flash.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f9ff;
+  padding: 2rem;
+  margin: 0;
+}
+
+form {
+  max-width: 350px;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input, select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-btn {
+  background-color: #4CAF50;
+}
+
+.register-btn {
+  background-color: #2196F3;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.controls {
+  padding: 1rem;
+  background: #e3f2fd;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.controls input[type=text] {
+  padding: 0.5rem;
+  width: 200px;
+}
+
+.controls button {
+  background-color: #4CAF50;
+}
+
+#map {
+  height: 500px;
+  max-width: 1000px;
+  margin: 1rem auto;
+  border: 3px solid #2196F3;
+  border-radius: 8px;
+}
+
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffcccc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #900;
+}
+
+.flash-messages {
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.flash {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.flash.error { background: #f8d7da; color: #721c24; }
+.flash.success { background: #d4edda; color: #155724; }
+.flash.info { background: #d1ecf1; color: #0c5460; }
+
+.admin-links {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; 
+}
+
+.admin-links a {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.admin-links a:hover {
+    background-color: #0056b3; 
+}
+
+.user-data-download-link {
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    z-index: 1000;
+}
+
+.user-data-download-link a {
+    background-color: #6c757d; 
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.user-data-download-link a:hover {
+    background-color: #5a6268;
+}
+
+.highlight-precaution {
+    background-color: #fff3cd; 
+    border-left: 4px solid #ffc107; 
+    padding: 10px;
+    margin-top: 10px;
+    font-style: italic;
+    color: #856404; 
+    border-radius: 4px;
+}
+
+.precautions-section{
+  width: 100%;
+  height:100%;
+}
+
+.form_group{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+}
